@@ -1,0 +1,65 @@
+<br>
+
+<h1>{{titulo}}</h1>
+<hr>
+
+<div class="row puntero animated fadeIn fast" *ngIf="peliculas.length > 0">
+
+    <div class="col-sm-6">
+
+        <div class="row">
+            <div [routerLink]="['/pelicula', peliculas[0].id, 'home']" class="col-md-12 div-pic-1" [ngStyle]="{ 'background-image': 'url( '+ (peliculas[0] | urlImage)+' )'  }">
+                <p class="pic-titulo">
+
+                    {{peliculas[0].original_title}}
+
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div [routerLink]="['/pelicula', peliculas[1].id, 'home']" class="col-sm-6 div-pic-2" [ngStyle]="{ 'background-image': 'url( '+ (peliculas[1] | urlImage)+' )'  }">
+                <p class="pic-titulo">
+
+                    {{peliculas[1].original_title}}
+
+                </p>
+            </div>
+            <div [routerLink]="['/pelicula', peliculas[2].id, 'home']" class="col-sm-6 div-pic-2" [ngStyle]="{ 'background-image': 'url( '+ (peliculas[2] | urlImage)+' )'  }">
+                <p class="pic-titulo">
+
+                    {{peliculas[2].original_title}}
+
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-6">
+        <div class="row">
+            <div [routerLink]="['/pelicula', peliculas[3].id, 'home']" class="col-sm-6 div-pic-2" [ngStyle]="{ 'background-image': 'url( '+ (peliculas[3] | urlImage)+' )'  }">
+                <p class="pic-titulo">
+
+                    {{peliculas[3].original_title}}
+
+                </p>
+            </div>
+            <div [routerLink]="['/pelicula', peliculas[4].id, 'home']" class="col-sm-6 div-pic-2" [ngStyle]="{ 'background-image': 'url( '+ (peliculas[4] | urlImage)+' )'  }">
+                <p class="pic-titulo">
+
+                    {{peliculas[4].original_title}}
+
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div [routerLink]="['/pelicula', peliculas[5].id, 'home']" class="col-md-12 div-pic-1" [ngStyle]="{ 'background-image': 'url( '+ (peliculas[5] | urlImage)+' )'  }">
+                <p class="pic-titulo">
+
+                    {{peliculas[5].original_title}}
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

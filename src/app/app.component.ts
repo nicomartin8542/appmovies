@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'peliculasApp';
+
+  constructor() {
+
+
+    /*     _ps.masPopulares().subscribe(resp => console.log(resp));
+    
+        _ps.peliculasActuales().subscribe(resp => console.log(resp));
+     */
+  }
+
+
 }

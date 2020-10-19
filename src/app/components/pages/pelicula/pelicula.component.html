@@ -1,0 +1,55 @@
+<h2 class="animated fadeIn m-3">
+    {{pelicula.title}} -
+    <small>
+        Fecha de estreno: 
+        {{pelicula.release_date | date:'dd/MM/yyyy'}}
+    </small>
+</h2>
+<hr>
+<div class="row  animated fadeIn m-3" *ngIf="pelicula">
+    <div class="col-sm-4">
+
+        <img [src]="pelicula | urlImage: 'poster'" class="img-fluid">
+        <br><br>
+
+    </div>
+
+    <div class="col-sm-8">
+
+        <h3>Sinopsis</h3>
+        <p>
+            {{pelicula.overview}}
+        </p>
+
+        <div *ngIf="pelicula.tagline">
+            <h3>Frase celebre</h3>
+            <p>
+                {{pelicula.tagline}}
+            </p>
+        </div>
+
+        <div>
+            <small>Generos:</small>
+            <span class="badge badge-primary m-2" *ngFor="let genero of pelicula.genres">{{genero.name}}</span>
+        </div>
+
+        <div>
+            <small>Voto promedio:</small>
+            <span class="badge badge-primary m-2">{{pelicula.vote_average }}</span>
+        </div>
+
+        <div>
+            <small>Popularidad:</small>
+            <span class="badge badge-primary m-2">{{pelicula.popularity | number:".0-0"}}/10</span>
+        </div>
+
+
+        <button type="button" (click)="regresar()" class="btn btn-outline-danger btn-block">Regresar</button>
+
+        <div>
+            <img class="img-logo" src="" alt="">
+        </div>
+    </div>
+
+
+</div>

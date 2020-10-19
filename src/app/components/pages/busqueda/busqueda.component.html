@@ -1,0 +1,25 @@
+<div class="row m-3">
+    <div class="col">
+        <input name="termino" [(ngModel)]="termino" type="text" (keyup.enter)="buscar()" class="form-control" placeholder="Buscar Artista">
+    </div>
+</div>
+<hr>
+
+<div class="card-columns m-5 animated fadeIn" *ngIf="_sp.peliculas.length > 0">
+    <div class="card" *ngFor="let pelicula of _sp.peliculas">
+        <img [src]="pelicula | urlImage" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{pelicula.title}} </h5>
+            <span class="badge badge-primary">Puntuacion: {{pelicula.vote_average}}</span>
+            <p class="card-text text-justify">{{pelicula.overview | slice:0:250}}...</p>
+
+        </div>
+        <div class="card-footer">
+
+            <button class="btn btn-outline-primary btn-block" type="button" [routerLink]="['/pelicula', pelicula.id, 'busqueda']" [queryParams]="{termino:termino}">
+                Ver mas...
+               </button>
+        </div>
+    </div>
+
+</div>
